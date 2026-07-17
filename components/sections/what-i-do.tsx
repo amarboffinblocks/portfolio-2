@@ -95,10 +95,10 @@ export const WhatIDo = () => {
           <h2 className="font-heading text-4xl leading-tight font-semibold text-primary lg:text-5xl">
             What I Build
           </h2>
-          <p className="max-w-xl text-base leading-7 text-muted-foreground">
+          {/* <p className="max-w-xl text-base leading-7 text-muted-foreground">
             Scalable web applications, AI-powered experiences, and high-performance
             interfaces — from architecture to deployment.
-          </p>
+          </p> */}
         </div>
 
         <Button

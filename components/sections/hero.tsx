@@ -65,6 +65,8 @@ const stats = [
     { value: '08+', label: 'Tech Stack' },
 ]
 
+const cornerBadgeClass =
+    'absolute top-0 left-0 z-10 bg-background px-6 py-2 text-xs font-semibold tracking-[0.16em] text-foreground uppercase rounded-br-xl before:pointer-events-none before:absolute before:-right-6 before:top-0 before:h-6 before:w-6 before:rounded-tl-xl before:shadow-[-6px_-6px_0_var(--background)] after:pointer-events-none after:absolute after:left-0 after:-bottom-6 after:h-6 after:w-6 after:rounded-tl-xl after:shadow-[-5px_-5px_0_var(--background)]'
 export const Hero = () => {
     return (
         <div>
@@ -72,15 +74,10 @@ export const Hero = () => {
                 <div className="relative rounded-xl overflow-hidden">
                     <img
                         src="images/amar.webp"
-                        className="w-full rounded-xl object-cover"
+                        className="w-full rounded-xl object-cover "
                         alt=""
                     />
-
-                    <div className="absolute uppercase  top-0 left-0 bg-background px-6 py-2 rounded-br-xl z-20
-      before:absolute before:-right-6 before:top-0 before:h-6 before:w-6
-      before:rounded-tl-xl before:shadow-[-6px_-6px_0_theme(colors.background)]
-      after:absolute after:left-0 after:-bottom-6 after:h-6 after:w-6
-      after:rounded-tl-xl after:shadow-[-5px_-5px_0_theme(colors.background)]">
+                    <div className={cornerBadgeClass}>
                         About us
                     </div>
                 </div>
