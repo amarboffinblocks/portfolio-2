@@ -4,5 +4,6 @@ import { FeaturedWork } from "./featured-work"
 import { About } from "./about"
 import { TechStack } from "./tech-stack"
 import { Testimonials } from "./testimonials"
+import { Contact } from "./contact"
 
-export { About, FeaturedWork, Hero, TechStack, Testimonials, WhatIDo }
+export { About, Contact, FeaturedWork, Hero, TechStack, Testimonials, WhatIDo }
