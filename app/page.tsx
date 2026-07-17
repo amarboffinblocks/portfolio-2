@@ -1,5 +1,5 @@
 import { Container } from '@/components/common/container'
-import { About, FeaturedWork, Hero, WhatIDo } from '@/components/sections'
+import { About, FeaturedWork, Hero, TechStack, WhatIDo } from '@/components/sections'
 
 const page = () => {
   return (
@@ -8,6 +8,7 @@ const page = () => {
       <WhatIDo />
       <FeaturedWork />
       <About />
+      <TechStack />
     </Container>
   )
 }
