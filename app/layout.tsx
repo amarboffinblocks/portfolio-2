@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { PortfolioChatbot } from "@/components/common/portfolio-chatbot";
 
 const geistHeading = Geist({ subsets: ['latin'], variable: '--font-heading' });
 
@@ -32,12 +33,9 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable, geistHeading.variable)}
     >
-      <body className="min-h-full grid grid-cols-3">
-        <div className="col-span-1">
-          chatbot
-        </div>
-        <main className="col-span-2 p-4">
-
+      <body className="min-h-dvh lg:grid lg:h-dvh lg:grid-cols-3 lg:overflow-hidden pl-4 py-4  gap-4">
+        <PortfolioChatbot />
+        <main className="min-w-0 lg:col-span-2 lg:h-full lg:overflow-y-auto">
           {children}
         </main>
       </body>
