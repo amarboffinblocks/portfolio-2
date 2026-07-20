@@ -1,5 +1,5 @@
-const cornerBadgeClass =
-  'absolute top-0 left-0 z-10 bg-background px-6 py-2 text-xs font-semibold tracking-[0.16em] text-foreground uppercase rounded-br-xl before:pointer-events-none before:absolute before:-right-6 before:top-0 before:h-6 before:w-6 before:rounded-tl-xl before:shadow-[-6px_-6px_0_var(--background)] after:pointer-events-none after:absolute after:left-0 after:-bottom-6 after:h-6 after:w-6 after:rounded-tl-xl after:shadow-[-5px_-5px_0_var(--background)]'
+import { SectionHeading } from '@/components/common/section-heading'
+import { TechCategoryCard } from '@/components/common/tech-category-card'
 
 const categories = [
   {
@@ -63,54 +63,19 @@ const categories = [
 export const TechStack = () => {
   return (
     <section id="tech-stack" className="py-16">
-      <div className="mb-12 max-w-2xl space-y-3">
-        <div className="inline-flex items-center gap-3">
-          <span className="h-px w-8 bg-primary" aria-hidden />
-          <p className="text-xs font-semibold tracking-[0.22em] text-muted-foreground uppercase">
-            Tech Stack
-          </p>
-        </div>
-        <h2 className="font-heading text-4xl leading-tight font-semibold text-primary lg:text-5xl">
-          Tools I Work With
-        </h2>
-   
-      </div>
+      <SectionHeading
+        eyebrow="Tech Stack"
+        title="Tools I Work With"
+        className="mb-12 pb-0"
+      />
 
       <div className="columns-1 gap-6 md:columns-2 xl:columns-3">
         {categories.map((category) => (
-          <article
+          <TechCategoryCard
             key={category.title}
-            className="relative mb-6 h-fit w-full break-inside-avoid overflow-hidden rounded-xl bg-accent px-6 pb-6 pt-16 md:mb-8"
-          >
-            <div className={cornerBadgeClass}>{category.title}</div>
-
-            <div className="grid grid-cols-2 gap-4">
-              {category.tools.map((tool, index) => {
-                const isWide =
-                  category.tools.length % 2 === 1 &&
-                  index === category.tools.length - 1
-
-                return (
-                  <div
-                    key={tool.name}
-                    className={`group flex flex-col items-center justify-center gap-3 rounded-xl bg-background/80 px-4 py-6 text-center transition-all duration-300 hover:-translate-y-0.5 hover:bg-background hover:shadow-[0_12px_30px_rgb(0_0_0/0.05)] ${
-                      isWide ? 'col-span-2' : ''
-                    }`}
-                  >
-                    <div
-                      className="flex size-12 items-center justify-center rounded-xl text-sm font-bold tracking-tight text-white shadow-sm transition-transform duration-300 group-hover:scale-110"
-                      style={{ backgroundColor: tool.color }}
-                    >
-                      {tool.mark}
-                    </div>
-                    <p className="text-sm font-semibold tracking-tight text-foreground">
-                      {tool.name}
-                    </p>
-                  </div>
-                )
-              })}
-            </div>
-          </article>
+            title={category.title}
+            tools={category.tools}
+          />
         ))}
       </div>
     </section>
