@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight } from '@/components/icons'
 import { Button } from '@/components/ui/button'
 
 const projectImage = '/images/boffinblocks-project.png'

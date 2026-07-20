@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ArrowDownToLine } from 'lucide-react'
+import { ArrowDownToLine } from '@/components/icons'
 import { Button } from '@/components/ui/button'
 
 const highlights = [

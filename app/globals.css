@@ -121,13 +121,82 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
-  button:not(:disabled), [role="button"]:not(:disabled) {
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
     cursor: pointer;
   }
+
   html {
     @apply font-sans;
+  }
+}
+
+@layer components {
+
+  /* Top-left corner scoop badge */
+  .corner-badge-tl {
+    @apply absolute top-0 left-0 z-10 bg-background px-6 py-2 text-xs font-semibold tracking-[0.16em] text-foreground uppercase rounded-br-xl;
+
+    &::before,
+    &::after {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      height: 1.5rem;
+      width: 1.5rem;
+      border-top-left-radius: var(--radius-xl);
+    }
+
+    &::before {
+      right: -1.5rem;
+      top: 0;
+      box-shadow: -6px -6px 0 var(--background);
+    }
+
+    &::after {
+      left: 0;
+      bottom: -1.5rem;
+      box-shadow: -5px -5px 0 var(--background);
+    }
+  }
+
+  /* Bottom-right corner scoop badge */
+  .corner-badge-br {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    padding: 0.5rem;
+    margin: 0 !important;
+    /* ignore parent space-y margins */
+    background-color: var(--background);
+    border-top-left-radius: calc(var(--radius) * 1.4);
+  }
+
+  .corner-badge-br::before,
+  .corner-badge-br::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-bottom-right-radius: calc(var(--radius) * 1.4);
+  }
+
+  .corner-badge-br::before {
+    top: -1.5rem;
+    right: 0;
+    box-shadow: 6px 6px 0 0 var(--background);
+  }
+
+  .corner-badge-br::after {
+    bottom: 0;
+    left: -1.5rem;
+    box-shadow: 6px 6px 0 0 var(--background);
   }
 }

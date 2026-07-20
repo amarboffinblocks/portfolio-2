@@ -1,4 +1,4 @@
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight } from '@/components/icons'
 
 const footerLinks = [
   { label: 'Work', href: '#projects' },
