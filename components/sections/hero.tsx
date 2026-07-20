@@ -95,23 +95,24 @@ export const Hero = () => {
                         </p>
                     </div>
 
-                    <div className="rounded-md bg-background/80 px-2 py-5 sm:px-4 sm:py-6">
-                        <div className="grid grid-cols-3">
-                            {stats.map((item, index) => (
-                                <div
-                                    key={item.label}
-                                    className={`space-y-2 px-4 sm:px-6 ${index > 0 ? 'border-l border-border' : ''
-                                        }`}
-                                >
-                                    <p className="font-heading text-3xl font-semibold tracking-tight text-primary sm:text-4xl">
-                                        {item.value}
-                                    </p>
-                                    <p className="text-[11px] font-semibold tracking-[0.18em] text-muted-foreground uppercase">
-                                        {item.label}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                        {stats.map((item) => (
+                            <div
+                                key={item.label}
+                                className="relative overflow-hidden rounded-xl bg-background px-5 py-5"
+                            >
+                                <span
+                                    aria-hidden
+                                    className="absolute top-0 left-0 h-full w-1 bg-primary"
+                                />
+                                <p className="font-heading text-3xl font-semibold tracking-tight text-primary sm:text-4xl">
+                                    {item.value}
+                                </p>
+                                <p className="mt-2 text-[11px] font-semibold tracking-[0.18em] text-muted-foreground uppercase">
+                                    {item.label}
+                                </p>
+                            </div>
+                        ))}
                     </div>
 
                     <div className="flex flex-wrap gap-3">
