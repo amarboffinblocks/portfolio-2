@@ -35,7 +35,7 @@ export default function RootLayout({
     >
       <body className="min-h-dvh lg:grid lg:h-dvh lg:grid-cols-3 lg:overflow-hidden pl-4 py-4  gap-4">
         <PortfolioChatbot />
-        <main className="min-w-0 lg:col-span-2 lg:h-full lg:overflow-y-auto">
+        <main className="min-w-0 lg:col-span-2 lg:h-full lg:overflow-y-auto pr-2">
           {children}
         </main>
       </body>

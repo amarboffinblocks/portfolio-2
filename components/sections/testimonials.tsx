@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import { SectionHeading } from '@/components/common/section-heading'
+import { TestimonialCard } from '@/components/common/testimonial-card'
 
 const testimonials = [
   {
@@ -30,50 +31,15 @@ const testimonials = [
 export const Testimonials = () => {
   return (
     <section id="testimonials" className="py-16">
-      <div className="mb-12 max-w-2xl space-y-3">
-        <div className="inline-flex items-center gap-3">
-          <span className="h-px w-8 bg-primary" aria-hidden />
-          <p className="text-xs font-semibold tracking-[0.22em] text-muted-foreground uppercase">
-            What Clients Say
-          </p>
-        </div>
-        <h2 className="font-heading text-4xl leading-tight font-semibold text-primary lg:text-5xl">
-          Feedback That Fuels Me
-        </h2>
-
-      </div>
+      <SectionHeading
+        eyebrow="What Clients Say"
+        title="Feedback That Fuels Me"
+        className="mb-12 pb-0"
+      />
 
       <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
         {testimonials.map((item) => (
-          <figure key={item.name} className="relative pt-7">
-            <div className="absolute top-0 left-6 z-20 size-14 overflow-hidden rounded-full bg-background ring-4 ring-background">
-              <Image
-                src={item.image}
-                alt={item.name}
-                fill
-                sizes="56px"
-                className="object-cover"
-              />
-            </div>
-
-            <blockquote className="relative flex h-full min-h-[280px] flex-col overflow-hidden rounded-2xl bg-accent px-6 pb-24 pt-14 sm:px-7 sm:pt-16">
-              <span
-                className="mb-4 block font-heading text-3xl leading-none text-muted-foreground/30"
-                aria-hidden
-              >
-                &ldquo;
-              </span>
-
-              <p className="flex-1 pb-2 text-base leading-7 text-foreground">
-                {item.quote}
-              </p>
-
-              <figcaption className="absolute bottom-0 left-0 z-10 bg-background px-6 py-2 rounded-tr-xl before:pointer-events-none before:absolute before:-right-5 before:bottom-0 before:size-5 before:rounded-bl-xl before:shadow-[-5px_5px_0_0_var(--background)] after:pointer-events-none after:absolute after:left-0 after:-top-5 after:size-5 after:rounded-bl-xl after:shadow-[-5px_5px_0_0_var(--background)]">
-                <p className="text-sm font-semibold text-foreground">{item.name}</p>
-                <p className="mt-0.5 text-xs text-muted-foreground">{item.role}</p>
-              </figcaption>
-            </blockquote>
-          </figure>
+          <TestimonialCard key={item.name} {...item} />
         ))}
       </div>
     </section>
