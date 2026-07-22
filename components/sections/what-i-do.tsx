@@ -15,7 +15,7 @@ import { ServiceCard, ServiceHighlightCard } from '@/components/common/service-c
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
-const CARD_CLASS = 'min-w-[85vw] shrink-0 sm:min-w-[380px] sm:max-w-[380px]'
+const CARD_CLASS = 'min-w-[85vw] shrink-0 sm:min-w-[380px] sm:max-w-[380px] w-full'
 
 const services = [
     {
@@ -145,7 +145,7 @@ export const WhatIDo = () => {
     const x = useTransform(scrollYProgress, [0, 1], [0, -scrollLength])
 
     return (
-        <section ref={sectionRef}>
+        <section ref={sectionRef}  >
             <div
                 className={cn(
                     'sticky top-0 py-16',
