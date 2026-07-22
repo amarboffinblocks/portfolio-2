@@ -121,7 +121,7 @@ const promptInputClassName = cn(
 const ChatMessages = ({ messages }: { messages: ChatMessage[] }) => (
   <>
     {messages.map((message) => (
-      <Message from={message.role} key={message.id} className="max-w-[92%]">
+      <Message from={message.role} key={message.id} className="max-w-[78%]">
         <MessageContent>
           {message.parts.map((part, index) => {
             if (part.type !== 'text') return null
@@ -172,7 +172,7 @@ export const PortfolioChatbot = () => {
       <PromptInputProvider>
         <div className="relative min-h-0 flex-1">
           <Conversation className="h-full">
-            <ConversationContent className="gap-5 px-3 py-4">
+            <ConversationContent className="gap-5 px-4 py-5">
               <ChatMessages messages={DUMMY_MESSAGES} />
             </ConversationContent>
             <ConversationScrollButton className="border-border/70 bg-background text-primary hover:bg-background hover:text-primary" />
