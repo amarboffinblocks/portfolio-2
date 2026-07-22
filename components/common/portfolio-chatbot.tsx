@@ -21,6 +21,7 @@ import {
   MessageResponse,
 } from '@/components/ai-elements/message'
 import { cn } from '@/lib/utils'
+import { Switch } from '../ui/switch'
 
 const navLinks = [
   { label: 'Work', href: '#projects' },
@@ -152,7 +153,7 @@ export const PortfolioChatbot = () => {
   }
 
   return (
-    <aside className="flex min-h-[40dvh] flex-col rounded-2xl bg-accent lg:sticky lg:top-0 lg:h-full lg:min-h-0">
+    <aside className="flex min-h-[40dvh] flex-col rounded-2xl bg-accent lg:sticky lg:top-0 lg:h-full lg:min-h-0 shrink-1">
       <header
         className={`relative z-20 w-auto self-start rounded-br-3xl bg-background px-6 py-2 ${scoopClass}`}
       >
@@ -166,6 +167,7 @@ export const PortfolioChatbot = () => {
               {link.label}
             </a>
           ))}
+          <Switch className={"rounded-full"} />
         </nav>
       </header>
 
